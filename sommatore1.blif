@@ -1,0 +1,21 @@
+.model sommatore1
+.inputs A B CIN
+.outputs O COUT
+
+# sommo i due bit
+.names A B K
+10 1
+01 1
+
+# sommo il risultato precedente al resto in ingresso
+.names K CIN O
+10 1
+01 1
+
+# calcolo il resto in uscita
+.names A B CIN COUT
+11- 1
+1-1 1
+-11 1
+
+.end

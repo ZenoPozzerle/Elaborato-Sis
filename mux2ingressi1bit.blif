@@ -1,0 +1,10 @@
+.model mux2ingressi1bit
+.inputs S A B
+.outputs O
+
+# con S=0 prende i bit A, con S=1 prende i bit B
+.names S A B O
+01- 1
+1-1 1
+
+.end

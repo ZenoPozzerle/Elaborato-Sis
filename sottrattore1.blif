@@ -1,0 +1,12 @@
+.model sottrattore1
+.inputs A B DEBTIN
+.outputs O DEBTOUT
+
+# non funziona se il minuendo è 0 e il sottraendo 1
+.names A B DEBTIN O
+001 1
+010 1
+
+.names A B DEBTIN DEBTOUT
+001 1
+010 1

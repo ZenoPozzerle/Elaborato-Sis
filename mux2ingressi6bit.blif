@@ -1,0 +1,15 @@
+.model mux2ingressi6bit
+.inputs S A6 A5 A4 A3 A2 A1 B6 B5 B4 B3 B2 B1
+.outputs O6 O5 O4 O3 O2 O1
+
+# con S=0 prende i bit A, con S=1 prende i bit B
+.subckt mux2ingressi1bit S=S A=A6 B=B6 O=O6
+.subckt mux2ingressi1bit S=S A=A5 B=B5 O=O5
+.subckt mux2ingressi1bit S=S A=A4 B=B4 O=O4
+.subckt mux2ingressi1bit S=S A=A3 B=B3 O=O3
+.subckt mux2ingressi1bit S=S A=A2 B=B2 O=O2
+.subckt mux2ingressi1bit S=S A=A1 B=B1 O=O1
+
+.search mux2ingressi1bit.blif
+
+.end
