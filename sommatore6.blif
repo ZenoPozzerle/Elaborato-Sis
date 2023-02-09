@@ -10,7 +10,8 @@
 .subckt sommatore1 A=A3 B=K CIN=C2 O=O3 COUT=C3
 .subckt sommatore1 A=A4 B=K CIN=C3 O=O4 COUT=C4
 .subckt sommatore1 A=A5 B=K CIN=C4 O=O5 COUT=C5
-.subckt sommatore1_noresto A=A6 B=K CIN=C5 O=O6
+.subckt sommatore1 A=A6 B=K CIN=C5 O=O6 COUT=C6
+#.subckt sommatore1_noresto A=A6 B=K CIN=C5 O=O6
 
 .search sommatore1.blif
 .search sommatore1_noresto.blif
