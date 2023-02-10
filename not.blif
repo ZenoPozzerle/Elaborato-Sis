@@ -1,4 +1,4 @@
-.model NOT
+.model not
 .inputs A
 .outputs O
 

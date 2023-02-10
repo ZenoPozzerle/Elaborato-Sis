@@ -1,0 +1,22 @@
+.model minore6
+.inputs A6 A5 A4 A3 A2 A1 B6 B5 B4 B3 B2 B1
+.outputs O
+
+.subckt xor A=A6 B=B6 O=O6
+.subckt xor A=A5 B=B5 O=O5
+.subckt xor A=A4 B=B4 O=O4
+.subckt xor A=A3 B=B3 O=O3
+.subckt xor A=A2 B=B2 O=O2
+.subckt xor A=A1 B=B1 O=O1
+
+.search xor.blif
+
+.names A6 A5 A4 A3 A2 A1 O6 O5 O4 O3 O2 O1 O
+0-----1----- 1
+-0----01---- 1
+--0---001--- 1
+---0--0001-- 1
+----0-00001- 1
+-----0000001 1
+
+.end

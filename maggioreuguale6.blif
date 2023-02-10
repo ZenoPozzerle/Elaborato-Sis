@@ -1,0 +1,11 @@
+.model maggioreuguale6
+.inputs A6 A5 A4 A3 A2 A1 B6 B5 B4 B3 B2 B1
+.outputs O
+
+.subckt minore6 A6=A6 A5=A5 A4=A4 A3=A3 A2=A2 A1=A1 B6=B6 B5=B5 B4=B4 B3=B3 B2=B2 B1=B1 O=K
+.subckt not A=K O=O
+
+.search minore6.blif
+.search not.blif
+
+.end
