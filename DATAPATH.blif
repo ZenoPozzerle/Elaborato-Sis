@@ -1,0 +1,10 @@
+.model datapath
+.inputs INVALID IN OUT SECT3 SECT2 SECT1
+.outputs SECTA SECTB SECTC SBIN SBOUT
+
+.subckt not A=INVALID O=X
+.subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECTA=SECTA SECTB=SECTB SECTC=SECTC SBIN=SBIN SBOUT=SBOUT
+
+.search ramodatapath.blif
+
+.end

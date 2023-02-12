@@ -1,0 +1,29 @@
+.model ramodatapath
+.inputs X IN OUT SECT3 SECT2 SECT1
+.outputs SECTA SECTB SECTC SBIN SBOUT
+
+.subckt costante0 O=ZERO
+.subckt costante1 O=UNO
+.subckt costante001 O3=C3 O2=C2 O1=C1
+.subckt costante010 O3=C6 O2=C5 O1=C4
+.subckt costante100 O3=C9 O2=C8 O1=C7
+.subckt costante24 O6=C15 O5=C14 O4=C13 O3=C12 O2=C11 O1=C10
+.subckt costante31 O6=C21 O5=C20 O4=C19 O3=C18 O2=C17 O1=C16
+
+.search costante0.blif
+.search costante1.blif
+.search costante001.blif
+.search costante010.blif
+.search costante001.blif
+.search costante24.blif
+.search costante31.blif
+
+.subckt registro6 A6= A5= A4= A3= A2= A1= O6=R6 O5=R5 O4=R4 O3=R3 O2=R2 O1=R1
+
+.subckt mux2ingressi6bit S A6 A5 A4 A3 A2 A1 B6 B5 B4 B3 B2 B1 O6=X6 O5=X5 O4=X4 O3=X3 O2=X2 O1=X1
+.subckt uguale6 A6=X6 A5=X5 A4=X4 A3=X3 A2=X2 A1=X1 B6 B5 B4 B3 B2 B1 O
+.subckt maggioreuguale6 A6=R6 A5=R5 A4=R4 A3=R3 A2=R2 A1=R1 B6=ZERO B5=UNO B4=UNO B3=UNO B2=UNO B1=UNO O=SECTA
+
+
+#.subckt mux2ingressi6bit S= A6= A5= A4= A3= A2= A1= B6= B5= B4= B3= B2= B1= O6= O5= O4= O3= O2= O1=
+#.subckt sommatore6 A6=X6 A5=X5 A4=X4 A3=X3 A2=X2 A1=X1 B1=X O6=X6 O5=X5 O4=X4 O3=X3 O2=X2 O1=X1

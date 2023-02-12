@@ -1,0 +1,11 @@
+.model fsmd
+.inputs IN OUT SECT3 SECT2 SECT1
+.outputs INVALID SBIN SBOUT SECTA SECTB SECTC
+
+#.subckt FSM
+.subckt DATAPATH
+
+#.search FSM.blif
+.search DATAPATH.blif
+
+.end
