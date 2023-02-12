@@ -1,0 +1,8 @@
+.model costante010
+.outputs O3 O2 O1
+
+.subckt costante0 O=O3
+.subckt costante1 O=O2
+.subckt costante0 O=O1
+
+.end
