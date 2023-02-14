@@ -3,8 +3,26 @@
 .outputs SECTA SECTB SECTC SBIN SBOUT
 
 .subckt not A=INVALID O=X
-.subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECTA=SECTA SECTB=SECTB SECTC=SECTC SBIN=SBIN SBOUT=SBOUT
+
+.subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECT=SECTA NOT=NOT1
+.subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECT=SECTB NOT=NOT2
+.subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECT=SECTC NOT=NOT3
 
 .search ramodatapath.blif
+
+########### ALEX
+
+.subckt or A=NOT1 B=NOT2 O=OutputOr
+.subckt or A=NOT2 B=NOT3 O=OutputOr1
+.subckt or A=OutputOr B=OutputOr1 O=OutputOr2
+.subckt mux4ingressi1bit S1=IN S0=OUT A=0 B=OutputOr2 C=0 D=0 O=OutputOr3
+.subckt mux4ingressi1bit S1=IN S0=OUT A=0 B=0 C=OutputOr2 D=0 O=OutputOr4
+.subckt uguale6 A6=0 A5=0 A4=0 A3=State2 A2=State1 A1=State0 B6=0 B5=0 B4=0 B3=1 B2=0 B1=0 O=UG4
+.subckt uguale6 A6=0 A5=0 A4=0 A3=State2 A2=State1 A1=State0 B6=0 B5=0 B4=0 B3=1 B2=0 B1=0 O=UG5
+.subckt mux2ingressi1bit S=UG4 A=0 B=OutputOr3 O=SBIN
+.subckt mux2ingressi1bit S=UG5 A=0 B=OutputOr4 O=SBOUT 
+
+
+#########
 
 .end
