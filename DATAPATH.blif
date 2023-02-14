@@ -4,6 +4,8 @@
 
 .subckt not A=INVALID O=X
 
+.search not.blif
+
 .subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECT=SECTA NOT=NOT1
 .subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECT=SECTB NOT=NOT2
 .subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECT=SECTC NOT=NOT3
@@ -22,6 +24,10 @@
 .subckt mux2ingressi1bit S=UG4 A=0 B=OutputOr3 O=SBIN
 .subckt mux2ingressi1bit S=UG5 A=0 B=OutputOr4 O=SBOUT 
 
+.search or.blif
+.search mux4ingressi1bit.blif
+.search uguale6.blif
+.search mux2ingressi1bit.blif
 
 #########
 
