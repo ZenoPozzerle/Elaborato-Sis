@@ -4,13 +4,13 @@
 
 # sottraggo bit per bit, portandomi ogni volta in avanti il debito
 
-.subckt costante0 O=K
-.subckt sottrattore1 A=A1 B=B DEBTIN=K O=O1 DEBTOUT=C1
-.subckt sottrattore1 A=A2 B=K DEBTIN=C1 O=O2 DEBTOUT=C2
-.subckt sottrattore1 A=A3 B=K DEBTIN=C2 O=O3 DEBTOUT=C3
-.subckt sottrattore1 A=A4 B=K DEBTIN=C3 O=O4 DEBTOUT=C4
-.subckt sottrattore1 A=A5 B=K DEBTIN=C4 O=O5 DEBTOUT=C5
-.subckt sottrattore1 A=A6 B=K DEBTIN=C5 O=O6 DEBTOUT=C6
+.subckt costante0 O=ZERO
+.subckt sottrattore1 A=A1 B=B DEBTIN=ZERO O=O1 DEBTOUT=C1
+.subckt sottrattore1 A=A2 B=ZERO DEBTIN=C1 O=O2 DEBTOUT=C2
+.subckt sottrattore1 A=A3 B=ZERO DEBTIN=C2 O=O3 DEBTOUT=C3
+.subckt sottrattore1 A=A4 B=ZERO DEBTIN=C3 O=O4 DEBTOUT=C4
+.subckt sottrattore1 A=A5 B=ZERO DEBTIN=C4 O=O5 DEBTOUT=C5
+.subckt sottrattore1 A=A6 B=ZERO DEBTIN=C5 O=O6 DEBTOUT=C6
 
 .search sottrattore1.blif
 .search costante0.blif

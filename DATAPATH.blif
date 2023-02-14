@@ -1,28 +1,36 @@
 .model datapath
-.inputs INVALID IN OUT SECT3 SECT2 SECT1
-.outputs SECTA SECTB SECTC SBIN SBOUT
+.inputs INVALID IN OUT SECT3 SECT2 SECT1 STATE2 STATE1 STATE0
+.outputs SBIN SBOUT SECTA SECTB SECTC
+
+.subckt costante0 O=ZERO
+.subckt costante1 O=UNO
+
+.search costante0.blif
+.search costante1.blif
 
 .subckt not A=INVALID O=X
 
 .search not.blif
 
-.subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECT=SECTA NOT=NOT1
-.subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECT=SECTB NOT=NOT2
-.subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 SECT=SECTC NOT=NOT3
+.subckt ramodatapath X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 STATE2=STATE2 STATE1=STATE1 STATE0=STATE0 SECT=SECTA NOT=NOT1
+.subckt ramodatapath2 X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 STATE2=STATE2 STATE1=STATE1 STATE0=STATE0 SECT=SECTB NOT=NOT2
+.subckt ramodatapath3 X=X IN=IN OUT=OUT SECT3=SECT3 SECT2=SECT2 SECT1=SECT1 STATE2=STATE2 STATE1=STATE1 STATE0=STATE0 SECT=SECTC NOT=NOT3
 
-.search ramodatapath.blif
+.search ramoDatapath.blif
+.search ramoDatapath2.blif
+.search ramoDatapath3.blif
 
 ########### ALEX
 
 .subckt or A=NOT1 B=NOT2 O=OutputOr
 .subckt or A=NOT2 B=NOT3 O=OutputOr1
 .subckt or A=OutputOr B=OutputOr1 O=OutputOr2
-.subckt mux4ingressi1bit S1=IN S0=OUT A=0 B=OutputOr2 C=0 D=0 O=OutputOr3
-.subckt mux4ingressi1bit S1=IN S0=OUT A=0 B=0 C=OutputOr2 D=0 O=OutputOr4
-.subckt uguale6 A6=0 A5=0 A4=0 A3=State2 A2=State1 A1=State0 B6=0 B5=0 B4=0 B3=1 B2=0 B1=0 O=UG4
-.subckt uguale6 A6=0 A5=0 A4=0 A3=State2 A2=State1 A1=State0 B6=0 B5=0 B4=0 B3=1 B2=0 B1=0 O=UG5
-.subckt mux2ingressi1bit S=UG4 A=0 B=OutputOr3 O=SBIN
-.subckt mux2ingressi1bit S=UG5 A=0 B=OutputOr4 O=SBOUT 
+.subckt mux4ingressi1bit S1=IN S0=OUT A=ZERO B=OutputOr2 C=ZERO D=ZERO O=OutputOr3
+.subckt mux4ingressi1bit S1=IN S0=OUT A=ZERO B=ZERO C=OutputOr2 D=ZERO O=OutputOr4
+.subckt uguale6 A6=ZERO A5=ZERO A4=ZERO A3=STATE2 A2=STATE1 A1=STATE0 B6=ZERO B5=ZERO B4=ZERO B3=UNO B2=ZERO B1=ZERO O=UG4
+.subckt uguale6 A6=ZERO A5=ZERO A4=ZERO A3=STATE2 A2=STATE1 A1=STATE0 B6=ZERO B5=ZERO B4=ZERO B3=UNO B2=ZERO B1=ZERO O=UG5
+.subckt mux2ingressi1bit S=UG4 A=ZERO B=OutputOr3 O=SBIN
+.subckt mux2ingressi1bit S=UG5 A=ZERO B=OutputOr4 O=SBOUT 
 
 .search or.blif
 .search mux4ingressi1bit.blif

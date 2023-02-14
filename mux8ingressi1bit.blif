@@ -1,0 +1,16 @@
+.model mux8ingressi1bit
+.inputs S2 S1 S0 A B C D E F G H
+.outputs O
+
+# con S=000 prende i bit A, con S=111 prende i bit H
+.names S2 S1 S0 A B C D E F G H O
+0001------- 1 
+001-1------ 1
+010--1----- 1
+011---1---- 1
+100----1--- 1
+101-----1-- 1
+110------1- 1
+111-------1 1
+
+.end

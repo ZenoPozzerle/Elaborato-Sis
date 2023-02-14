@@ -4,14 +4,14 @@
 
 # sommo bit per bit, portandomi ogni volta in avanti il resto
 
-.subckt costante0 O=K
-.subckt sommatore1 A=A1 B=B1 CIN=K O=O1 COUT=C1
-.subckt sommatore1 A=A2 B=K CIN=C1 O=O2 COUT=C2
-.subckt sommatore1 A=A3 B=K CIN=C2 O=O3 COUT=C3
-.subckt sommatore1 A=A4 B=K CIN=C3 O=O4 COUT=C4
-.subckt sommatore1 A=A5 B=K CIN=C4 O=O5 COUT=C5
-.subckt sommatore1 A=A6 B=K CIN=C5 O=O6 COUT=C6
-#.subckt sommatore1_noresto A=A6 B=K CIN=C5 O=O6
+.subckt costante0 O=ZERO
+.subckt sommatore1 A=A1 B=B1 CIN=ZERO O=O1 COUT=C1
+.subckt sommatore1 A=A2 B=ZERO CIN=C1 O=O2 COUT=C2
+.subckt sommatore1 A=A3 B=ZERO CIN=C2 O=O3 COUT=C3
+.subckt sommatore1 A=A4 B=ZERO CIN=C3 O=O4 COUT=C4
+.subckt sommatore1 A=A5 B=ZERO CIN=C4 O=O5 COUT=C5
+.subckt sommatore1 A=A6 B=ZERO CIN=C5 O=O6 COUT=C6
+#.subckt sommatore1_noresto A=A6 B=ZERO CIN=C5 O=O6
 
 .search sommatore1.blif
 .search sommatore1_noresto.blif
