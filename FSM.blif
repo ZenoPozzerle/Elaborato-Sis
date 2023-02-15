@@ -1,11 +1,13 @@
 .model fsm
 .inputs IN OUT SECT3 SECT2 SECT1
 .outputs INVALID STATE2 STATE1 STATE0
-
+.latch    [1119] LatchOut_v5   1
+.latch    LatchOut_v5 LatchOut_v6   1
+.latch    [1121] LatchOut_v7   0
 .start_kiss
 .i 5
 .o 4
-.p 18
+.p 19
 .s 5
 .r NOTTE
 ----0 NOTTE NOTTE 0000
@@ -26,7 +28,71 @@
 --101 AUTOMATICO AUTOMATICO 1100
 --110 AUTOMATICO AUTOMATICO 1100
 --111 AUTOMATICO AUTOMATICO 1100
-00000 AUTOMATICO NOTTE 0000 
+00000 AUTOMATICO NOTTE 0000
 .end_kiss
-
+.latch_order LatchOut_v5 LatchOut_v6 LatchOut_v7
+.code NOTTE 110
+.code PRIMO 010
+.code SECONDO 001
+.code TERZO 100
+.code AUTOMATICO 111
+.names IN OUT SECT3 LatchOut_v5 LatchOut_v6 LatchOut_v7 [1135] [1119]
+----0-- 1
+-----1- 1
+0--1--- 1
+-0-1--- 1
+--01--- 1
+---1--1 1
+.names STATE2 STATE0 [1121]
+1- 1
+-1 1
+.names SECT3 STATE2 [1133] [1134] [1135] INVALID
+-1-0- 1
+-1--0 1
+111-- 1
+.names IN OUT LatchOut_v6 LatchOut_v7 [1134] STATE2
+1-11- 1
+-111- 1
+--111 1
+.names LatchOut_v6 STATE1
+0 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STATE0
+0-0 1
+-00 1
+.names SECT2 SECT1 [1133]
+1- 1
+-1 1
+.names SECT3 [1133] [1134]
+1- 1
+-1 1
+.names SECT2 SECT1 [1135]
+0- 1
+-0 1
+.exdc 
+.inputs IN OUT SECT3 SECT2 SECT1 LatchOut_v5 LatchOut_v6 LatchOut_v7
+.outputs [1119] [1121] INVALID STATE2 STATE1 STATE0
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [1119]
+011 1
+101 1
+000 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 [1121]
+011 1
+101 1
+000 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 INVALID
+011 1
+101 1
+000 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STATE2
+011 1
+101 1
+000 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STATE1
+011 1
+101 1
+000 1
+.names LatchOut_v5 LatchOut_v6 LatchOut_v7 STATE0
+011 1
+101 1
+000 1
 .end
